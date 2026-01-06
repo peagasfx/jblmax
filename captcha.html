@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captcha Simplificado</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .captcha-container {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .captcha-checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #999;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .checkbox:hover {
+      border-color: #4CAF50;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+    }
+
+    .checkbox.checked {
+      background: #4CAF50;
+      border-color: #4CAF50;
+    }
+
+    .checkbox.checked::after {
+      content: "✓";
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .checkbox-label {
+      font-size: 16px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .continue-btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .continue-btn:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="captcha-container">
+    <h2>Confirmação de Segurança</h2>
+    <p>Marque a caixa abaixo para confirmar que você não é um robô:</p>
+
+    <div class="captcha-checkbox">
+      <div class="checkbox" id="captchaCheckbox"></div>
+      <label for="captchaCheckbox" class="checkbox-label">Não sou um robô</label>
+    </div>
+
+    <button id="continueBtn" class="continue-btn" style="display:none;">Continuar</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById('captchaCheckbox');
+      const continueBtn = document.getElementById('continueBtn');
+
+      checkbox.addEventListener('click', function() {
+        this.classList.toggle('checked');
+
+        // When checked, immediately redirect to index.html
+        if (this.classList.contains('checked')) {
+          sessionStorage.setItem('captchaVerified', true);
+          window.location.href = 'index.html';
+        }
+      });
+
+      // Also allow clicking the label to toggle the checkbox
+      document.querySelector('.checkbox-label').addEventListener('click', function() {
+        checkbox.click();
+      });
+    });
+  </script>
+</body>
+</html>

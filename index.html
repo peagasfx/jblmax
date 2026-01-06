@@ -1,0 +1,1313 @@
+<!DOCTYPE html><html lang="pt-br">
+<!-- Mirrored from kitfranciny.online/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Aug 2025 13:38:15 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <title>
+ </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Redirect to captcha if not already verified -->
+  <script>
+    // Check if user has already passed captcha
+    if (!sessionStorage.getItem('captchaVerified')) {
+      // Redirect to captcha page
+      window.location.href = 'captcha.html';
+    }
+  </script>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com/"></script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+
+    body, html {
+      overflow-x: hidden!important;
+    }
+
+
+    .swiper-slide-thumb-active {
+      border: 2px solid #06b6d4; /* cyan-500 */
+      border-radius: 8px;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+
+    body {
+      background-color: #fff!important;
+    }
+
+    .reviews-section {
+      padding: 16px;
+    }
+
+    .reviews-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .reviews-title {
+      font-family: 'TikTokFont', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .reviews-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .rating-big {
+      font-family: 'TikTokDisplayFont', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .stars {
+      color: #ffc107;
+      font-size: 16px;
+    }
+
+
+    .review-item {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 16px 0;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .review-stars {
+      color: #ffc107;
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    .review-variant {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .review-text {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .review-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+
+    .review-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+
+    .review-image {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .review-image {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .review-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ddd;
+    }
+
+    .tab-active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- BANNER SUPERIOR -->
+  <div id="ewqewqewq" style="border-bottom: solid 0px #8d8d8d40;">
+    <img src="tela.jfif" style="width: 100%; margin-bottom: 0;">
+  </div>
+
+  <!-- BANNER PRINCIPAL -->
+  <div class="relative w-full max-w-5xl mx-auto my-6">
+    <div class="swiper main-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/1" alt="Imagem 1"></div>
+        <div class="swiper-slide"><img src="images/1.1" alt="Imagem 2"></div>
+        <div class="swiper-slide"><img src="images/1.3" alt="Imagem 3"></div>
+        <div class="swiper-slide"><img src="images/1.2" alt="Imagem 4"></div>
+        <div class="swiper-slide"><img src="images/1.5" alt="Imagem 5"></div>
+        <div class="swiper-slide"><img src="images/1.6" alt="Imagem 6"></div>
+      </div>
+
+      <!-- PAGINAÇÃO -->
+      <div class="swiper-pagination"></div>
+
+  <!-- SCRIPT DO SWIPER -->
+  <script>
+    const mainSwiper = new Swiper('.main-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000, // muda a cada 3 segundos
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      speed: 800,
+    });
+  </script>
+
+      <!-- Contador -->
+      <div class="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full z-10" id="counter">1/7</div>
+
+      <!-- Bolinhas -->
+      <div class="swiper-pagination !bottom-1 !text-center"></div>
+    </div>
+  </div>
+
+  <!-- Miniaturas -->
+  <div class="px-4 pb-4 pt-2" style="display: none;">
+    <div class="swiper thumb-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide w-16 h-16"><img src="images/1.1" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbe754_02.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbe841_03.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbe94d_04.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbea30_05.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbeb3d_06.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbec4f_07.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/688301ebcf6a3_Imagem%20do%20WhatsApp%20de%202025-07-25%20%c3%a0(s)%2000.16.27_ddbd2f68.html" class="w-full h-full object-cover rounded"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  .group:hover .group-hover\:text-blue-700 {
+      color: #333;
+  }
+  </style>
+
+  <div class="bg-white mx-auto rounded shadow border border-gray-200 text-[13px]" style="margin-bottom: 0em; border-radius: 0px;">
+
+    <!-- TOPO LARANJA -->
+    <div class="bg-gradient-to-r from-orange-600 to-orange-400 pt-2 pb-1 text-white" style="padding: 1em 1em; padding-bottom: 0em; padding-top: 1.3em;">
+      <div class="flex justify-between items-start">
+        <div class="leading-tight">
+
+          <p class="text-2xl font-bold leading-none" style="display: inline-flex; align-items: center;">R$ 56,70 <svg style="margin-left: 0.3em; margin-top: 0.1em;" fill="none" height="20" viewBox="0 0 18 18" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M2.25 7.3123V3.5998C2.25 3.42078 2.32112 3.24909 2.4477 3.12251C2.57429 2.99592 2.74598 2.9248 2.925 2.9248H15.075C15.254 2.9248 15.4257 2.99592 15.5523 3.12251C15.6789 3.24909 15.75 3.42078 15.75 3.5998V7.3123C15.3024 7.3123 14.8732 7.49009 14.5568 7.80656C14.2403 8.12303 14.0625 8.55225 14.0625 8.9998C14.0625 9.44736 14.2403 9.87658 14.5568 10.193C14.8732 10.5095 15.3024 10.6873 15.75 10.6873V14.3998C15.75 14.5788 15.6789 14.7505 15.5523 14.8771C15.4257 15.0037 15.254 15.0748 15.075 15.0748H2.925C2.74598 15.0748 2.57429 15.0037 2.4477 14.8771C2.32112 14.7505 2.25 14.5788 2.25 14.3998V10.6873C2.69755 10.6873 3.12677 10.5095 3.44324 10.193C3.75971 9.87658 3.9375 9.44736 3.9375 8.9998C3.9375 8.55225 3.75971 8.12303 3.44324 7.80656C3.12677 7.49009 2.69755 7.3123 2.25 7.3123ZM10.35 4.2748H3.6V6.2782C4.10707 6.5295 4.53384 6.91746 4.83222 7.39834C5.13059 7.87921 5.28869 8.43388 5.28869 8.9998C5.28869 9.56573 5.13059 10.1204 4.83222 10.6013C4.53384 11.0821 4.10707 11.4701 3.6 11.7214V13.7248H10.35V4.2748ZM11.7 4.2748V13.7248H14.4V11.7214C13.8929 11.4701 13.4662 11.0821 13.1678 10.6013C12.8694 10.1204 12.7113 9.56573 12.7113 8.9998C12.7113 8.43388 12.8694 7.87921 13.1678 7.39834C13.4662 6.91746 13.8929 6.5295 14.4 6.2782V4.2748H11.7Z" fill="white"></path></svg></p>
+
+          <div style="display: inline-flex">
+            <p class="line-through text-sm text-orange-200" style="display: inline-flex; align-items: center!important;">R$ 2.873,72</p>
+            <p style="margin-left: 0.5em; padding: 0.3em 0.6em; border-radius: 25px; background-color: #fe5d38;">Economize 82%</p>
+          </div>
+
+        </div>
+        <div class="text-xs font-semibold" style="text-transform: uppercase;  text-align: right; width: 70%; display: inline-flex; justify-content: flex-end;"><svg class="h-[1.2em] w-[1.2em]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> Oferta Relâmpago</div>
+      </div>
+      <div class="flex justify-between items-center text-xs mt-1" style="margin-top: 0rem;">
+        <p style="visibility: hidden;">Economize até 82%</p>
+        <p id="countdown" class="bg-white text-orange-600 font-bold px-2 py-0.5 rounded text-[11px]" style="text-transform: uppercase; margin-top: -4.2em;">
+          Termina em 00:05:00
+        </p>
+      </div>
+
+      <script>
+        let totalSeconds = 300; // 5 minutos
+
+        function formatTime(seconds) {
+          const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+          const secs = (seconds % 60).toString().padStart(2, '0');
+          return "Termina em 00:" + mins + ":" + secs;
+        }
+
+        const countdownEl = document.getElementById('countdown');
+        countdownEl.textContent = formatTime(totalSeconds);
+
+        const interval = setInterval(() => {
+          totalSeconds--;
+
+          if (totalSeconds <= 0) {
+            clearInterval(interval);
+            countdownEl.textContent = "Oferta encerrada";
+            countdownEl.classList.remove("text-orange-600");
+            countdownEl.classList.add("text-red-600");
+          } else {
+            countdownEl.textContent = formatTime(totalSeconds);
+          }
+        }, 1000);
+      </script>
+    </div>
+
+    <!-- DESCONTO EXTRA -->
+    <div class="flex gap-2 px-2" style="margin-top: 1em;">
+      <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full" style="border-radius: 5px;">Economize R$259,90</span>
+      <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full" style="border-radius: 5px;">Economize 72% COM CUPOM</span>
+    </div>
+
+    <!-- TÍTULO -->
+    <div class="px-3 pt-3">
+      <p class="text-gray-800 font-medium leading-snug text-[18px]">
+        <span class="Promoção dias das crianças" style="display: inline-block; background: linear-gradient(to right, #f9c2d0, #c2f9f1); padding: 2px 6px; border-radius: 8px; font-weight: bold; font-size: 11px; color: #000; margin-right: 6px;">🔥 OFERTA RELÂMPAGO </span> Caixa de Som Bluetooth À Prova D'água Boombox 4 JBL - Voltagem:
+127/220V
+      </p>
+    </div>
+
+    <!-- AVALIAÇÃO -->
+    <div class="px-3 mt-1 flex items-center gap-1 text-gray-600 text-[12px]">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 17.27L18.18 21l-1.63-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.45 4.73L5.82 21z"></path>
+      </svg>
+      <span class="font-semibold">4.7</span>
+      <span>(204)</span>
+      <span class="mx-1">•</span>
+      <span>4473 vendidos</span>
+    </div>
+
+    <hr style="margin-top: 1.5em; margin-bottom: 1.5em;">
+
+<!-- FRETE COM DATA DINÂMICA -->
+<div class="px-4 py-5 mt-4 text-gray-800 text-base flex items-start gap-3 bg-white rounded-xl shadow-md border border-gray-100">
+  <!-- Ícone do caminhão -->
+  <img src="images/truck-line-2.svg" alt="Entrega" class="w-7 h-7 text-blue-600 flex-shrink-0 mt-0.5">
+
+  <!-- Conteúdo do texto -->
+  <div class="space-y-1.5">
+    <!-- Data de entrega dinâmica (atualiza automaticamente) -->
+    <p id="delivery-date" class="text-gray-700 font-medium">
+      Receba até 3–8 de out
+    </p>
+
+    <!-- Taxa de envio fixa -->
+    <p class="text-gray-600 text-sm">Taxa de envio: <span class="text-green-600 font-bold">Grátis</span></p>
+  </div>
+</div>
+
+<!-- SCRIPT PARA ATUALIZAR A DATA DINAMICAMENTE -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function atualizarDataEntrega() {
+      const hoje = new Date();
+
+      // Calcular datas de entrega (3-8 dias úteis)
+      const dataMinima = new Date(hoje);
+      const dataMaxima = new Date(hoje);
+
+      dataMinima.setDate(hoje.getDate() + 3);
+      dataMaxima.setDate(hoje.getDate() + 8);
+
+      // Formatar datas em português (ex: "3–8 de out")
+      const options = { day: 'numeric', month: 'short' };
+      const locale = 'pt-BR';
+
+      const dataMin = dataMinima.toLocaleDateString(locale, options);
+      const dataMax = dataMaxima.toLocaleDateString(locale, options);
+
+      // Verificar se as datas estão no mesmo mês
+      const mesMin = dataMinima.toLocaleDateString(locale, { month: 'short' });
+      const mesMax = dataMaxima.toLocaleDateString(locale, { month: 'short' });
+
+      let textoData;
+      if (mesMin === mesMax) {
+        // Mesmo mês: "3–8 de out"
+        const diaMin = dataMin.split(' ')[0];
+        const diaMax = dataMax.split(' ')[0];
+        textoData = `${diaMin}–${diaMax} de ${mesMin}`;
+      } else {
+        // Meses diferentes: "28 de set – 3 de out"
+        textoData = `${dataMin} – ${dataMax}`;
+      }
+
+      // Atualizar o texto no HTML
+      document.getElementById('delivery-date').textContent =
+        `Receba até ${textoData}`;
+    }
+
+    // Executar imediatamente e atualizar a cada 24h
+    atualizarDataEntrega();
+    setInterval(atualizarDataEntrega, 86400000); // 24h em milissegundos
+  });
+</script>
+
+    <script>
+      const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+
+      const hoje = new Date();
+      const amanha = new Date();
+      amanha.setDate(hoje.getDate() + 1);
+
+      const dia = amanha.getDate();
+      const mes = meses[amanha.getMonth()];
+
+      document.getElementById('entrega').innerText = 'Receba de '+dia+' de '+mes+' - '+dia+' de '+mes+'';
+    </script>
+
+<!-- SEÇÃO: SERVIÇOS DO TIKTOK SHOP (ESTILO TIKTOK) -->
+<div class="bg-yellow-50 p-4 rounded-lg shadow-sm"> <!-- Fundo levemente amarelado, padding, bordas arredondadas e sombra suave -->
+
+  <!-- CABEÇALHO DA SEÇÃO -->
+  <div class="flex items-center justify-between mb-4"> <!-- Alinhamento flexível, itens centralizados, espaçamento entre eles e margem inferior -->
+
+    <!-- ÍCONE DO ESCUDO (CÍRCULO MARROM COM CHECK BRANCO) E TÍTULO -->
+    <div class="flex items-center">
+      <!-- Ícone: Círculo marrom com check branco -->
+      <div class="w-6 h-6 mr-2 relative flex-shrink-0 rounded-full bg-amber-700"> <!-- Círculo sólido marrom -->
+        <!-- Checkmark branco no centro -->
+        <svg class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+
+      <!-- Título da seção -->
+      <h3 class="text-amber-700 font-semibold text-lg">Serviços do TikTok Shop</h3>
+    </div>
+
+    <!-- Seta indicando que é clicável -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+
+  <!-- LISTA DE SERVIÇOS EM DUAS COLUNAS -->
+  <!-- Grid layout para organizar os itens em 2 colunas -->
+  <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+
+    <!-- Item 1: Devolução gratuita -->
+    <div class="flex items-start text-gray-800">
+      <!-- Checkmark verde -->
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      </svg>
+      <span>Devolução gratuita</span>
+    </div>
+
+    <!-- Item 2: Cupom por perda ou dano (com quebra de linha) -->
+    <div class="flex items-start text-gray-800">
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      </svg>
+      <span>Cupom por perda ou<br>dano</span> <!-- Quebra de linha para combinar com a foto -->
+    </div>
+
+    <!-- Item 3: Pagamento seguro -->
+    <div class="flex items-start text-gray-800">
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      </svg>
+      <span>Pagamento seguro</span>
+    </div>
+
+    <!-- Item 4: Cupom por atraso na coleta (com quebra de linha) -->
+    <div class="flex items-start text-gray-800">
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      </svg>
+      <span>Cupom por atraso na<br>coleta</span> <!-- Quebra de linha para combinar com a foto -->
+    </div>
+
+  </div> <!-- Fim do grid de serviços -->
+
+</div> <!-- Fim do container principal da seção -->
+
+<!-- SEPARADOR (OPCIONAL, PARA DIVIDIR SEÇÕES) -->
+<div class="border-t border-gray-200 my-4"></div>
+
+<!-- SEÇÃO: OFERTAS (COM CUPOM JÁ APLICADO) -->
+<div class="bg-white p-4">
+  <!-- CABEÇALHO -->
+  <div class="flex items-center justify-between mb-3">
+    <h3 class="font-medium text-gray-900">Ofertas</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+
+  <!-- CARTÃO DE OFERTA (ESTADO: JÁ APLICADO) -->
+  <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-lg p-4 border border-rose-100 flex justify-between items-center">
+    <div>
+      <span class="text-2xl font-bold text-rose-600">Frete Grátis</span>
+      <p class="text-xs text-gray-600 mt-1">Entrega gratuita para todo o Brasil em compras acima de R$ 50,00</p>
+    </div>
+    <!-- Botão alterado para "Aplicado" com ícone de check -->
+    <div class="bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md text-sm flex items-center gap-2 cursor-default"> <!-- Fundo cinza para "desabilitado/aplicado" -->
+      <svg class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      </svg>
+      Aplicado
+    </div>
+  </div>
+</div>
+
+  <!-- Tabs -->
+  <div class="flex border-b border-gray-200 text-sm font-medium space-x-6 mb-4" style="background-color: #fff!important; margin-top: 2em; display: none;">
+    <button class="relative px-4 py-2 text-black font-semibold tab-button tab-active" data-tab="tab1">
+      Visão geral
+    </button>
+    <button class="relative px-4 py-2 text-gray-500 hover:text-black tab-button" data-tab="tab2">
+      Descrição
+    </button>
+  </div>
+
+  <!-- Conteúdo das abas -->
+  <div id="tab1" class="tab-content">
+
+    <div class="max-w-md mx-auto bg-white p-4 rounded shadow" style="display: none;">
+      <div class="flex justify-between font-medium mb-2">
+        <span>Selecionar opções</span>
+        <span class="text-gray-500" style="font-size: 0.8em; color: #000;">Quantidade</span>
+      </div>
+
+      <div id="option-list" class="flex flex-wrap gap-2" style="justify-content: space-evenly;">
+
+        <div class="relative">
+          <!-- Opção ATIVA (disponível) -->
+          <button class="option-btn bg-emerald-400 text-white font-semibold px-4 py-2 rounded-md text-xs shadow" data-status="available">
+            262
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gray-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Disponível</span>
+        </div>
+
+        <!-- Opções ESGOTADAS -->
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            24
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            48
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            60
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            80
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            100
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+      </div>
+
+      <!-- Alerta HTML -->
+      <div id="alert-msg" class="mt-4 text-red-600 text-xs font-medium hidden">
+        Produto esgotado. Escolha uma opção disponível.
+      </div>
+    </div>
+
+    <script>
+      const buttonsx = document.querySelectorAll('.option-btn');
+      const alert = document.getElementById('alert-msg');
+
+      buttonsx.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const status = btn.getAttribute('data-status');
+
+          if (status === 'available') {
+            alert.classList.add('hidden');
+            // Remove seleção anterior
+            buttonsx.forEach(b => b.classList.remove('bg-emerald-400', 'text-white', 'font-semibold', 'shadow'));
+            // Aplica estilo de ativo
+            btn.classList.add('bg-emerald-600', 'text-white', 'font-semibold', 'shadow');
+          } else {
+            alert.classList.remove('hidden');
+          }
+        });
+      });
+    </script>
+
+<!-- SEÇÃO DE AVALIAÇÕES DOS CLIENTES -->
+<div class="bg-white p-4 rounded-lg shadow-sm">
+
+  <!-- CABEÇALHO -->
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-lg font-bold text-gray-800">Avaliações dos clientes (207)</h2>
+  </div>
+
+  <!-- NOTA GERAL -->
+  <div class="flex items-center mb-4">
+    <span class="text-3xl font-bold text-gray-800">4.7</span>
+    <span class="text-lg text-gray-600 ml-2">/5</span>
+    <div class="ml-4 flex">
+      <span class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</span>
+    </div>
+  </div>
+
+  <!-- LISTA DE REVIEWS -->
+  <div class="space-y-4">
+
+    <!-- REVIEW 1 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="images/menina1.jpg" alt="Luh Moraes" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Luh Moraes</p>
+          <p class="text-xs text-green-500">há 23 minutos</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+      <p class="text-sm text-gray-700 mb-2">O som é tão potente que parece uma caixa de som profissional! A conexão Bluetooth é estável e o carregamento é bem rápido. Perfeita pra qualquer ocasião.</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="images/91" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="images/92" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="images/93" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+    <!-- REVIEW 2 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="images/menina2.jpg" alt="Bela Prado" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Bela Prado</p>
+          <p class="text-xs text-green-500">há 41 minutos</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+      <p class="text-sm text-gray-700 mb-2">Uso em viagens e festas — o áudio é absurdo de bom! A Boombox 4 tem um som limpo, com muito grave e agudos equilibrados. O design ainda é lindo e resistente à água.</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="images/review1.1.jpeg" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="images/review1.2.jpeg" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="images/review1.3.jpeg" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+    <!-- REVIEW 3 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="images/menina3.jpg" alt="Elane Costa" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Elane Costa</p>
+          <p class="text-xs text-green-500">há 50 minutos</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+      <p class="text-sm text-gray-700 mb-2">Amei! Vem super bem embalado 😍 </p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="images/222" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+    <!-- REVIEW 4 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="images/menina5.jpg" alt="Sofia Dias" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Sofia Dias</p>
+          <p class="text-xs text-green-500">há 1 hora</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+      <p class="text-sm text-gray-700 mb-2">Comprei pra usar em churrascos e viagens e não me decepcionei. O design é robusto, o áudio enche o ambiente e a conexão Bluetooth é estável. Carregamento rápido e acabamento premium. Vale cada centavo.</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="images/111" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+<!-- REVIEW 5 -->
+<div class="bg-gray-50 p-4 rounded-lg">
+  <div class="flex items-start gap-3 mb-2">
+    <img src="images/vjssas123.jpg" alt="Carlos Albuquerque" class="w-10 h-10 rounded-full object-cover"> <!-- ✅ IMAGEM CORRETA AQUI -->
+    <div>
+      <p class="font-medium text-gray-800">Carlos Albuquerque</p>
+      <p class="text-xs text-green-500">há 1 hora</p>
+    </div>
+  </div>
+  <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+  <p class="text-sm text-gray-700 mb-2">Som absurdo de bom! A Boombox 4 JBL entregou graves potentes e clareza mesmo em volumes altos. Levei pra piscina e a prova d'água é real — sem preocupações. Bateria dura o dia todo.</p>
+  <div class="flex gap-2 flex-wrap">
+    <img src="images/review3.1.jpeg" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+    <img src="images/review3.2.jpeg" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+  </div>
+</div>
+
+    <!-- REVIEW 6 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="images/review4" alt="Rafaela Lima" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Rafaela Lima</p>
+          <p class="text-xs text-green-500">há 1 hora</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+      <p class="text-sm text-gray-700 mb-2">Perfeita para festas ao ar livre. O som é muito potente, o alcance Bluetooth surpreende e não temo deixar perto da água. Bateria segura a maratona inteira. Compra certeira pra quem gosta de som forte e sem dor de cabeça</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="images/review" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+    <!-- REVIEW 7 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="images/review1" alt="Beatriz Souza" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Beatriz Souza</p>
+          <p class="text-xs text-green-500">há 1 hora</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2">⭐⭐⭐⭐⭐</div>
+      <p class="text-sm text-gray-700 mb-2">Incrível como um equipamento tão resistente consegue ter som tão limpo. Testei em praia e não entrou nada de areia ou água. Fácil de emparelhar com o celular e a autonomia é ótima. Produto top!</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="images/revi222.jpeg" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FILTROS ESTATÍSTICOS -->
+  <div class="mt-6 flex flex-wrap gap-2">
+    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+      <svg fill="#666" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"></path>
+      </svg>
+      Inclui imagens ou vídeos (52)
+    </span>
+    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+      <span class="text-yellow-500">5</span>
+      <svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg>
+      (155)
+    </span>
+    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+      <span class="text-yellow-500">4</span>
+      <svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg>
+      (22)
+    </span>
+  </div>
+
+</div>
+
+<div class="relative overflow-hidden bg-white rounded-2xl border border-gray-100 max-w-md mx-auto mt-8 shadow-lg hover:shadow-xl transition-all duration-300">
+
+  <!-- Efeito de Gradiente Suave no Topo -->
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-500"></div>
+
+  <!-- Conteúdo Principal -->
+  <div class="p-5 flex items-center justify-between">
+
+    <!-- Logo + Informações -->
+    <div class="flex items-center space-x-4 group">
+      <!-- Logo com Efeito 3D -->
+      <div class="relative">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 p-0.5">
+          <img
+            src="images/logo"
+            alt="JBL Eletronicos Tiktok Shops"
+            class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm transition-transform duration-300 group-hover:scale-105"
+          >
+        </div>
+        <!-- Badge de Verificação -->
+        <div class="absolute -bottom-1 -right-1 bg-blue-500 rounded-full p-1 shadow-md">
+          <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Nome e Produtos -->
+      <div class="flex flex-col">
+        <div class="flex items-center">
+          <p class="font-bold text-gray-800 text-sm tracking-tight">JBL Eletronicos Shops</p>
+          <span class="ml-2 bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full">Verified</span>
+        </div>
+        <p class="text-xs text-gray-500 flex items-center">
+          <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-1"></span>
+          1706 produtos • 100% recomenda
+        </p>
+      </div>
+    </div>
+
+    <!-- Botão Seguir com Animação -->
+    <button id="seguirBtn"
+            class="bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 text-blue-700 font-semibold text-sm px-4 py-2 rounded-xl border border-blue-200 transition-all duration-300 hover:scale-105 hover:shadow-md">
+      <span class="flex items-center">
+        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        </svg>
+        Seguir
+      </span>
+    </button>
+  </div>
+
+  <!-- Barra de Progresso Simbólica (Confiança) -->
+  <div class="px-5 py-2 bg-gray-50 border-t border-gray-100">
+    <div class="flex justify-between text-xs text-gray-500 mb-1">
+      <span>Confiança:</span>
+      <span>100%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-1.5">
+      <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-1.5 rounded-full" style="width: 100%"></div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    const seguirBtn = document.getElementById('seguirBtn');
+    const key = 'seguiu_karla_bella';
+
+    // Carrega estado do localStorage
+    if (localStorage.getItem(key) === '1') {
+      seguirBtn.textContent = 'Seguindo';
+      seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+      seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+    }
+
+    seguirBtn.addEventListener('click', () => {
+      const seguindo = localStorage.getItem(key) === '1';
+
+      if (seguindo) {
+        localStorage.removeItem(key);
+        seguirBtn.textContent = 'Seguir';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      } else {
+        localStorage.setItem(key, '1');
+        seguirBtn.textContent = 'Seguindo';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      }
+    });
+  </script>
+
+<!-- Adicione a CDN do Tailwind no head se ainda não estiver usando -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- COMEÇA: Descrição do produto (estilo TikTok Shop) -->
+<section class="max-w-md mx-auto space-y-6">
+<!-- Card da descrição -->
+<article class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+  <h2 class="text-lg font-extrabold text-gray-900 tracking-tight">Caixa de Som Bluetooth À Prova D'água Boombox 4 JBL</h2>
+
+  <!-- Subtitle / destaque -->
+  <p class="mt-2 text-sm text-gray-600">Som potente, design moderno e resistência total para acompanhar o seu ritmo — onde quer que esteja.</p>
+
+  <!-- Descrição (colapsável) -->
+  <div id="descPreview" class="mt-3 text-sm text-gray-700 max-h-28 overflow-hidden transition-all duration-200" aria-hidden="false">
+    <p class="mb-2">
+      No TikTok, a vibe é intensidade — e som de qualidade não pode ficar de fora. A Boombox 4 JBL chega com potência de sobra, estilo marcante e resistência para te acompanhar em qualquer lugar. Seja na praia, na piscina, no churrasco ou no quarto, o som vai ser sempre o protagonista.
+    </p>
+    <p class="mb-2">
+      Feita para quem vive no ritmo da música, essa caixa de som combina graves profundos, bateria de longa duração e design moderno. E o melhor: totalmente à prova d’água, pra você curtir sem se preocupar com respingos ou mergulhos.
+    </p>
+  </div>
+
+  <div class="mt-2">
+    <button id="toggleDescBtn" class="text-sm font-semibold text-rose-600 hover:underline focus:outline-none" aria-expanded="false">
+      Ver mais
+    </button>
+  </div>
+
+  <!-- Itens inclusos -->
+  <div class="mt-4 pt-4 border-t border-gray-100">
+    <h3 class="text-sm font-semibold text-gray-900">Itens Inclusos</h3>
+    <ul class="mt-3 space-y-2 text-sm text-gray-700">
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"/>
+        </svg>
+        <span>1 x Caixa de Som JBL Boombox 4 Original</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"/>
+        </svg>
+        <span>1 x Cabo de carregamento USB-C</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"/>
+        </svg>
+        <span>1 x Manual do usuário</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"/>
+        </svg>
+        <span>Garantia oficial do fabricante</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Especificações -->
+  <div class="mt-4 pt-4 border-t border-gray-100">
+    <h3 class="text-sm font-semibold text-gray-900">Especificações</h3>
+    <dl class="grid grid-cols-2 gap-x-4 gap-y-2 mt-3 text-sm text-gray-700">
+      <div>
+        <dt class="text-gray-500 text-xs">Potência</dt>
+        <dd>80W RMS</dd>
+      </div>
+      <div>
+        <dt class="text-gray-500 text-xs">Conectividade</dt>
+        <dd>Bluetooth 5.3 + entrada auxiliar</dd>
+      </div>
+      <div>
+        <dt class="text-gray-500 text-xs">Autonomia</dt>
+        <dd>Até 24 horas</dd>
+      </div>
+      <div>
+        <dt class="text-gray-500 text-xs">Proteção</dt>
+        <dd>À prova d’água e poeira (IP67)</dd>
+      </div>
+      <div>
+        <dt class="text-gray-500 text-xs">Tempo de recarga</dt>
+        <dd>6,5 horas</dd>
+      </div>
+      <div>
+        <dt class="text-gray-500 text-xs">Peso</dt>
+        <dd>5,9 kg</dd>
+      </div>
+      <div>
+        <dt class="text-gray-500 text-xs">Dimensões</dt>
+        <dd>48,2 x 25,7 x 20 cm</dd>
+      </div>
+      <div>
+        <dt class="text-gray-500 text-xs">Compatibilidade</dt>
+        <dd>JBL Portable App</dd>
+      </div>
+    </dl>
+  </div>
+
+  <!-- Destaques -->
+  <div class="mt-4 pt-4 border-t border-gray-100">
+    <h3 class="text-sm font-semibold text-gray-900">Por que escolher a Boombox 4 JBL</h3>
+    <ul class="mt-3 space-y-2 text-sm text-gray-700">
+      <li>✅ Som poderoso: Graves marcantes e áudio cristalino</li>
+      <li>✅ Resistência total: Design à prova d’água e poeira (IP67)</li>
+      <li>✅ Bateria duradoura: Até 24h de reprodução contínua</li>
+      <li>✅ Conexão rápida: Bluetooth 5.3 estável e sem interrupções</li>
+      <li>✅ Estilo JBL: Design moderno com alça reforçada e acabamento premium</li>
+    </ul>
+  </div>
+
+  <!-- Oferta -->
+  <div class="mt-4 pt-4 border-t border-gray-100">
+    <h3 class="text-sm font-semibold text-gray-900">Oferta Especial</h3>
+    <p class="mt-2 text-sm text-gray-700">
+      De <span class="line-through text-gray-400">R$ 329,90</span> por <span class="text-rose-600 font-semibold">R$ 86,91</span> — economia de <strong>R$ 249,90</strong> (72% de desconto).
+      Som de alta performance com preço de oportunidade exclusiva aqui no TikTok Shop!
+    </p>
+  </div>
+
+  <!-- Envio -->
+  <div class="mt-4 pt-4 border-t border-gray-100">
+    <p class="text-sm text-gray-700">🚚 Envio rápido e seguro para todo o Brasil. Aproveite essa oferta e leve a experiência JBL para o seu dia a dia!</p>
+  </div>
+</article>
+
+
+  <!-- Container principal com estilização (semelhante ao card) -->
+<div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+    <div class="space-y-4 divide-y divide-gray-100">
+
+<!-- FOOTER TIKTOK SHOP (ESTILO OFICIAL) -->
+<footer class="bg-white border-t border-gray-100 pt-4 pb-16 px-4">
+  <div class="max-w-md mx-auto">
+
+    <!-- GRID PRINCIPAL (4 QUADRANTES) -->
+    <div class="grid grid-cols-2 gap-4 mb-6">
+
+      <!-- QUADRANTE 1: COMPRE -->
+      <div class="bg-gray-50 rounded-xl p-3 hover:bg-gray-50/80 transition-colors">
+        <p class="font-semibold text-sm text-gray-900 mb-2 flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Compre
+        </p>
+        <ul class="text-xs space-y-1">
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Mais vendidos</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Novidades</a></li>
+        </ul>
+      </div>
+
+      <!-- QUADRANTE 2: GANHE -->
+      <div class="bg-gray-50 rounded-xl p-3 hover:bg-gray-50/80 transition-colors">
+        <p class="font-semibold text-sm text-gray-900 mb-2 flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Ganhe
+        </p>
+        <ul class="text-xs space-y-1">
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Afiliado</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Programa criador</a></li>
+        </ul>
+      </div>
+
+      <!-- QUADRANTE 3: SOBRE -->
+      <div class="bg-gray-50 rounded-xl p-3 hover:bg-gray-50/80 transition-colors">
+        <p class="font-semibold text-sm text-gray-900 mb-2 flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Sobre
+        </p>
+        <ul class="text-xs space-y-1">
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Sobre nós</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Carreiras</a></li>
+        </ul>
+      </div>
+
+      <!-- QUADRANTE 4: SUPORTE -->
+      <div class="bg-gray-50 rounded-xl p-3 hover:bg-gray-50/80 transition-colors">
+        <p class="font-semibold text-sm text-gray-900 mb-2 flex items-center">
+          <svg class="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Suporte
+        </p>
+        <ul class="text-xs space-y-1">
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Central de Ajuda</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SEÇÃO DE POLÍTICAS -->
+    <div class="bg-gray-50 rounded-xl p-3 mb-6">
+      <p class="font-semibold text-sm text-gray-900 mb-2 flex items-center">
+        <svg class="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        Política & Legal
+      </p>
+      <ul class="text-xs space-y-1">
+        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Política de privacidade</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition">Termos de uso</a></li>
+      </ul>
+    </div>
+
+    <!-- APP STORES -->
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#" class="hover:opacity-90 transition">
+        <img src="images/Google_Play_Store_badge_EN.svg" class="h-8" alt="Google Play">
+      </a>
+      <a href="#" class="hover:opacity-90 transition">
+        <img src="images/download-on-the-app-store.svg" class="h-8" alt="App Store">
+      </a>
+    </div>
+
+    <!-- INFORMAÇÕES FINAIS -->
+    <div class="text-center text-xs text-gray-500 space-y-1">
+      <p>© 2025 Shops.</p>
+      <div class="flex justify-center space-x-2 mt-1">
+        <a href="#" class="hover:text-blue-500 transition">Política de privacidade</a>
+        <span>•</span>
+        <a href="#" class="hover:text-blue-500 transition">Termos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Estilos necessários para remover o marcador nativo (infelizmente, isso ainda requer CSS) -->
+<!-- Se você PODE adicionar um bloco <style>: -->
+<style>
+  /* Necessário para remover o marcador nativo do <details> */
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+</style>
+
+<!-- Estilos extras (rotaciona chevron quando <details> está aberto e remove marcador padrão) -->
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+  details summary svg { transform-origin: center; }
+  details[open] summary svg { transform: rotate(180deg); }
+</style>
+
+<!-- Script: toggle "Ver mais" e acessibilidade -->
+<script>
+  (function () {
+    const desc = document.getElementById('descPreview');
+    const btn = document.getElementById('toggleDescBtn');
+
+    btn.addEventListener('click', function () {
+      const isCollapsed = desc.classList.contains('max-h-28');
+      if (isCollapsed) {
+        desc.classList.remove('max-h-28');
+        desc.classList.add('max-h-full');
+        btn.textContent = 'Ver menos';
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        desc.classList.add('max-h-28');
+        desc.classList.remove('max-h-full');
+        btn.textContent = 'Ver mais';
+        btn.setAttribute('aria-expanded', 'false');
+        // rola para garantir leitura (opcional)
+        desc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  })();
+</script>
+
+<!-- Footer Fixo (Estilo TikTok Shop Oficial) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md px-4 py-2 flex items-center justify-between z-50">
+
+  <!-- Ícones lado esquerdo -->
+  <div class="flex items-center gap-6">
+    <!-- Loja -->
+    <div class="flex flex-col items-center text-xs text-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mb-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"/>
+      </svg>
+      <span class="text-xs">Loja</span>
+    </div>
+
+    <!-- Chat -->
+    <div class="flex flex-col items-center text-xs text-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mb-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-3.39-.57l-4.5 1.07 1.08-3.24C4.37 15.93 3 14.08 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+      </svg>
+      <span class="text-xs">Chat</span>
+    </div>
+  </div>
+
+<!-- Botões lado direito -->
+<div class="flex items-center gap-2 w-full max-w-[65%]">
+
+    <!-- Botão Adicionar ao carrinho (cinza claro) -->
+  <button type="button"
+          onclick="abrirModal()"
+          class="inline-flex items-center justify-center h-11 px-3 py-2 rounded-lg bg-gray-100 text-gray-900 text-sm font-medium shadow-sm active:scale-[.98] whitespace-nowrap transition-colors duration-200 flex-[1.2]">
+    <span class="text-sm leading-none text-center">Adicionar<br>ao carrinho</span>
+  </button>
+
+  <!-- Botão Comprar com Cupom (COR OFICIAL TIKTOK SHOP) -->
+  <button type="button"
+          onclick="abrirModal()"
+          class="inline-flex items-center justify-center h-12 px-4 py-3 rounded-lg bg-[#FF0050] hover:bg-[#e60049] text-white text-sm font-semibold uppercase tracking-wide shadow-md active:scale-[.98] whitespace-nowrap transition-all duration-200 flex-[1.8]">
+    <span class="text-sm leading-none text-center">Comprar</span>
+  </button>
+</div>
+
+<!-- MODAL PRINCIPAL -->
+<div id="meuModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white p-5 rounded-2xl w-11/12 max-w-md relative shadow-xl">
+
+    <!-- BOTÃO FECHAR -->
+    <button onclick="fecharModal()"
+            class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-2xl font-bold">×</button>
+
+    <!-- TÍTULO -->
+    <h2 id="div_ors_1" class="text-xl font-bold text-gray-800 text-center mb-4">
+      JBL Boombox 4 — Escolha a Sua
+    </h2>
+
+    <!-- OPÇÕES DE CORES -->
+    <div id="colors-list" class="grid grid-cols-2 gap-3 px-2 mb-4"></div>
+
+    <!-- BOTÃO DE CHECKOUT -->
+    <button id="confirmCheckoutBtn"
+            class="w-full bg-gray-400 text-white font-semibold py-3 rounded-lg cursor-not-allowed transition-all"
+            disabled>
+      Selecione uma cor
+    </button>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+// ===== CONFIGURAÇÃO DAS VARIAÇÕES =====
+const colorVariants = [
+  { key: 'Preta',     img: 'images/1.1',     checkout: 'https://pay.mestredoar.online/DYp0ZxVbQx4gmvX' },
+  { key: 'Camuflada', img: 'images/1',       checkout: 'https://pay.mestredoar.online/mwK436dnq26GQ8b' },
+  { key: 'Azul',      img: 'images/1.2',     checkout: 'https://pay.mestredoar.online/ODAK3LlN82j3E6V' },
+  { key: 'Branca',    img: 'images/1.3',     checkout: 'https://pay.mestredoar.online/BNjzgPl9kqxgM78' }
+];
+
+let selectedVariant = null;
+
+// ===== FUNÇÕES DE MODAL =====
+function abrirModal() {
+  document.getElementById('meuModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  renderColorOptions();
+}
+
+function fecharModal() {
+  document.getElementById('meuModal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+// ===== RENDERIZA AS CORES =====
+function renderColorOptions() {
+  const container = document.getElementById('colors-list');
+  container.innerHTML = '';
+  colorVariants.forEach(variant => {
+    const div = document.createElement('div');
+    div.className = 'cursor-pointer rounded-lg p-2 flex flex-col items-center border border-gray-200 hover:shadow-md transition';
+    div.innerHTML = `
+      <img src="${variant.img}" alt="${variant.key}" class="w-full h-32 object-contain rounded-md mb-2">
+      <p class="text-sm font-medium text-gray-800">${variant.key}</p>
+    `;
+    div.addEventListener('click', () => onSelectVariant(div, variant));
+    container.appendChild(div);
+  });
+}
+
+// ===== SELECIONAR VARIAÇÃO =====
+function onSelectVariant(div, variant) {
+  document.querySelectorAll('#colors-list > div').forEach(d => {
+    d.classList.remove('ring-2', 'ring-rose-500', 'border-rose-300');
+  });
+
+  div.classList.add('ring-2', 'ring-rose-500', 'border-rose-300');
+  selectedVariant = variant;
+
+  const btn = document.getElementById('confirmCheckoutBtn');
+  btn.disabled = false;
+  btn.classList.remove('bg-gray-400', 'cursor-not-allowed');
+  btn.classList.add('bg-rose-600', 'hover:bg-rose-700', 'cursor-pointer');
+  btn.textContent = `Comprar Agora Cor — ${variant.key}`;
+  btn.onclick = goToCheckout;
+}
+
+// ===== REDIRECIONA PARA CHECKOUT =====
+function goToCheckout() {
+  if (!selectedVariant) return;
+  fecharModal();
+  window.location.href = selectedVariant.checkout;
+}
+</script>
+
+
+  <!-- Seus arquivos JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/modal.js"></script>
+
+  <script>
+    // INICIALIZAÇÃO DO SWIPER (já existente no seu código)
+    var thumbSwiper = new Swiper(".thumb-swiper", {
+      spaceBetween: 10,
+      slidesPerView: 3,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    var mainSwiper = new Swiper(".main-swiper", {
+      rewind: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+      on: {
+        slideChange: function () {
+          let current = this.realIndex + 1;
+          if (current > 7) {
+            current = 1;
+            this.slideTo(0);
+          }
+          document.getElementById("counter").textContent = current + "/7";
+        }
+      }
+    });
+
+    // INICIALIZAÇÃO DO FEATHER ICONS (já existente)
+    feather.replace();
+
+    // FUNÇÃO TOGGLE DESCRIÇÃO (já existente)
+    (function () {
+      const desc = document.getElementById('descPreview');
+      const btn = document.getElementById('toggleDescBtn');
+
+      btn.addEventListener('click', function () {
+        const isCollapsed = desc.classList.contains('max-h-28');
+        if (isCollapsed) {
+          desc.classList.remove('max-h-28');
+          desc.classList.add('max-h-full');
+          btn.textContent = 'Ver menos';
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          desc.classList.add('max-h-28');
+          desc.classList.remove('max-h-full');
+          btn.textContent = 'Ver mais';
+          btn.setAttribute('aria-expanded', 'false');
+          desc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    })();
+
+    // BOTÃO SEGUIR (já existente)
+    const seguirBtn = document.getElementById('seguirBtn');
+    const key = 'seguiu_karla_bella';
+
+    if (localStorage.getItem(key) === '1') {
+      seguirBtn.textContent = 'Seguindo';
+      seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+      seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+    }
+
+    seguirBtn.addEventListener('click', () => {
+      const seguindo = localStorage.getItem(key) === '1';
+      if (seguindo) {
+        localStorage.removeItem(key);
+        seguirBtn.textContent = 'Seguir';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      } else {
+        localStorage.setItem(key, '1');
+        seguirBtn.textContent = 'Seguindo';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      }
+    });
+  </script>
+</body>
+</html>

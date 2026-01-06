@@ -1,0 +1,52 @@
+/* Estilos dos modais e variações */
+.variacao-opcao {
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #fff;
+}
+
+.variacao-opcao:hover {
+  border-color: #e91e63;
+  transform: translateY(-2px);
+}
+
+.variacao-opcao.ativo {
+  border-color: #e91e63;
+  background: #fff5f7;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.15);
+}
+
+.color-option {
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.color-option:hover { 
+  border-color: #e91e63; 
+}
+
+.color-option.selecionada {
+  border-color: #e91e63;
+  background: #fff5f7;
+}
+
+#confirm-button:not(:disabled):hover {
+  background: #d81b60 !important;
+  transform: scale(1.02);
+}
+
+#div_ors_4 {
+  transition: all 0.3s;
+}
+
+#div_ors_4:not(.cursor-not-allowed):hover {
+  background: #d81b60;
+  transform: scale(1.02);
+}
