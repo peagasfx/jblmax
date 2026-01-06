@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Segurança - Acesso ao Site</title>
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .captcha-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      padding: 40px 30px;
+      position: relative;
+    }
+    
+    .captcha-header {
+      margin-bottom: 30px;
+    }
+    
+    .captcha-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .captcha-icon svg {
+      width: 40px;
+      height: 40px;
+      color: white;
+    }
+    
+    .captcha-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+    
+    .captcha-subtitle {
+      font-size: 16px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    
+    .captcha-content {
+      margin-bottom: 30px;
+    }
+    
+    .discount-offer {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+    
+    .captcha-box {
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      background: #f8fafc;
+    }
+    
+    .captcha-checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #cbd5e1;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .checkbox.checked {
+      background: #10b981;
+      border-color: #10b981;
+    }
+    
+    .checkbox.checked::after {
+      content: "✓";
+      color: white;
+      font-size: 14px;
+    }
+    
+    .checkbox-label {
+      font-size: 16px;
+      color: #475569;
+      cursor: pointer;
+    }
+    
+    .continue-btn {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    .continue-btn.enabled {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .continue-btn.enabled:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+    
+    .loading {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ffffff;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .security-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+    
+    .security-info svg {
+      width: 16px;
+      height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="captcha-container">
+    <div class="captcha-header">
+      <div class="captcha-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <h1 class="captcha-title">Confirme que não é um robô</h1>
+      <p class="captcha-subtitle">Para proteger nosso site e garantir uma experiência segura para todos os usuários</p>
+    </div>
+    
+    <div class="captcha-content">
+      <div class="discount-offer">
+        🎁 Confirme que não é um robô e ganhe 15% de desconto extra!
+      </div>
+      
+      <div class="captcha-box">
+        <p class="text-gray-700 mb-4">Por favor, confirme que você é um usuário humano para continuar</p>
+        
+        <div class="captcha-checkbox">
+          <div class="checkbox" id="captchaCheckbox"></div>
+          <label for="captchaCheckbox" class="checkbox-label">Não sou um robô</label>
+        </div>
+        
+        <p class="text-sm text-gray-500 mt-2">Clique na caixa acima para confirmar</p>
+      </div>
+      
+      <button id="continueBtn" class="continue-btn">
+        <span class="btn-text">Continuar para o site</span>
+        <div class="loading" id="loadingSpinner">
+          <div class="spinner"></div>
+          <span>Verificando...</span>
+        </div>
+      </button>
+    </div>
+    
+    <div class="security-info">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+      <span>Protegido por tecnologia de segurança avançada</span>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkbox = document.getElementById('captchaCheckbox');
+      const continueBtn = document.getElementById('continueBtn');
+      const loadingSpinner = document.getElementById('loadingSpinner');
+      const btnText = document.querySelector('.btn-text');
+      
+      let isVerified = false;
+      
+      checkbox.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        isVerified = this.classList.contains('checked');
+        
+        if (isVerified) {
+          continueBtn.classList.add('enabled');
+        } else {
+          continueBtn.classList.remove('enabled');
+        }
+      });
+      
+      continueBtn.addEventListener('click', function() {
+        if (!isVerified) return;
+        
+        // Show loading state
+        btnText.style.display = 'none';
+        loadingSpinner.style.display = 'flex';
+        continueBtn.disabled = true;
+        
+        // Redirect after a short delay to simulate verification
+        setTimeout(function() {
+          window.location.href = 'index.html';
+        }, 1500);
+      });
+      
+      // Also allow clicking the label to toggle the checkbox
+      document.querySelector('.checkbox-label').addEventListener('click', function() {
+        checkbox.click();
+      });
+    });
+  </script>
+</body>
+</html>
